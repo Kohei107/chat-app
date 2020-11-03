@@ -21,8 +21,10 @@ end
     @message.content = nil
     @message.image = nil
     @message.valid?
+    binding.pry
     expect(@message.errors.full_messages).to include("Content can't be blank")
     end
+    
     it 'roomが紐付いていないと保存できないこと' do
       @message.room = nil
       @message.valid?
